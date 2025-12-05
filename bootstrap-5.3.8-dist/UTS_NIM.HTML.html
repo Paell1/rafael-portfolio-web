@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Minimalis Modern - Rafael</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <style>
+        :root {
+            --light-bg: #dfe9f3;
+            --light-card-bg: #ffffff;
+            --dark-bg: #121212;
+            --dark-card-bg: #1f1f1f;
+            --text-color-light: #212529;
+            --text-color-dark: #f5f5f5;
+        }
+        body {
+            background: linear-gradient(to bottom right, var(--light-bg), var(--light-card-bg));
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color-light);
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .navbar, footer {
+            backdrop-filter: blur(10px);
+            transition: background-color 0.5s;
+        }
+        .hero {
+            padding: 100px 0 80px 0;
+        }
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+        
+        /* --- TEMA SECTION BARU --- */
+        .bg-section-light {
+            background-color: var(--light-card-bg); /* Putih */
+        }
+        .bg-section-alt {
+            background-color: var(--light-bg); /* Abu-abu muda */
+        }
+        /* PENTING: Mengganti hr (garis pemisah) dengan margin/padding jika menggunakan background */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: transparent;
+            margin: 0;
+        }
+
+        /* --- Animasi --- */
+        .slide-in {
+            opacity: 0;
+            transform: translateX(-40px);
+            animation: slideIn 1s ease forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+            animation-play-state: paused;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- DARK MODE Konsolidasi --- */
+        body.dark-mode {
+            background: var(--dark-bg) !important;
+            color: var(--text-color-dark) !important;
+        }
+        body.dark-mode .navbar,
+        body.dark-mode footer {
+            background: #1e1e1e99 !important;
+        }
+        body.dark-mode .card {
+            background: var(--dark-card-bg);
+            color: #fff;
+        }
+        body.dark-mode .text-muted {
+            color: #bbb !important;
+        }
+        body.dark-mode .nav-link,
+        body.dark-mode .navbar-brand {
+            color: #fff !important;
+        }
+        body.dark-mode .btn-outline-secondary {
+             color: #bbb !important;
+             border-color: #555 !important;
+        }
+        /* Penyesuaian Dark Mode untuk tema section baru */
+        body.dark-mode .bg-section-light,
+        body.dark-mode .bg-section-alt {
+            background-color: #1e1e1e !important; /* Warna dark mode seragam untuk semua section */
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Portofolio</a>
+        <div class="d-flex align-items-center order-lg-3">
+            <button id="darkToggle" class="btn btn-outline-secondary me-3 rounded-circle" style="width:42px;height:42px; display:flex; justify-content:center; align-items:center; font-size:18px;" aria-label="Toggle Dark Mode">🌙</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse order-lg-2" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="#project">Project</a></li>
+                <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="profil" class="hero text-center slide-in">
+    <div class="container">
+        <img src="profile.jpg" class="rounded-circle mb-3 shadow" width="160" alt="Foto Profil Rafael">
+        <h2 class="fw-bold" id="typing-name"></h2>
+        <p class="text-muted">Mahasiswa | Web Developer Pemula | Desainer</p>
+    </div>
+</section>
+
+<hr> 
+
+<section id="tentang" class="py-5 bg-section-light fade-in-on-scroll">
+    <div class="container">
+        <h3 class="section-title">Tentang Saya</h3>
+        <p>Halo! Aku Rafael Putra Arjuna. Aku orangnya suka banget eksplor hal-hal baru, terutama yang berhubungan sama teknologi dan desain. Akhir-akhir ini aku lagi fokus belajar web development dan bikin tampilan website yang simple, rapi, dan modern.</p>
+
+        <p>Aku mulai ngulik HTML, CSS, dan sedikit JavaScript karena awalnya cuma penasaran… eh malah jadi keterusan. Sekarang aku sering banget bikin project kecil, coba-coba desain, atau ubah tampilan website biar makin enak dilihat.</p>
+
+        <p>Selain ngoding, aku juga enjoy ngedesain. Rasanya seru aja bisa gabungin kreativitas sama logika dalam satu hal. Bikin sesuatu yang bisa dipakai orang lain itu kepuasan tersendiri buatku.</p>
+
+        <p>Kalau disimpulkan, aku adalah:</p>
+        <ul>
+            <li>🎓 Mahasiswa yang masih terus belajar</li>
+            <li>💻 Developer pemula yang suka eksperimen</li>
+            <li>🎨 Orang yang hobi desain dan hal-hal minimalis</li>
+        </ul>
+        <p>Intinya sih, aku cuma pengen terus berkembang dan bikin karya yang bikin aku bangga sendiri. Santai aja, perjalanan masih panjang. 😉</p>
+    </div>
+</section>
+
+<hr>
+
+<section id="project" class="py-5 bg-section-alt fade-in-on-scroll">
+    <div class="container">
+        <h3 class="section-title">Project</h3>
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3 fade-in-on-scroll">
+                <div class="card shadow-sm p-2">
+                    <img src="profile1.jpg" class="card-img-top rounded" alt="Project Website">
+                    <div class="card-body">
+                        <h5 class="card-title">Project</h5>
+                        <p class="card-text">Website satu halaman yang menampilkan portofolia seseorang.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 fade-in-on-scroll">
+                <div class="card shadow-sm p-2">
+                    <img src="profile2.jpg" class="card-img-top rounded" alt="Galeri pemula">
+                    <div class="card-body">
+                        <h5 class="card-title">Galeri</h5>
+                        <p class="card-text">Saya sedang coba coba buat map di salah satu game yaitu roblox.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 fade-in-on-scroll">
+                <div class="card shadow-sm p-2">
+                    <img src="profile4.jpg" class="card-img-top rounded" alt="Hobi">
+                    <div class="card-body">
+                        <h5 class="card-title">Hobi</h5>
+                        <p class="card-text">Hobi saya bermain game,salah satu game yang saya mainkan adalah roblox karena di dalamnya ada berbagai jenis map yang menarik.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 fade-in-on-scroll">
+                <div class="card shadow-sm p-2">
+                    <img src="profile3.jpg" class="card-img-top rounded" alt="Kemampuan">
+                    <div class="card-body">
+                        <h5 class="card-title">Kemampuan</h5>
+                        <p class="card-text">Kemampuan saya tidak banyak namun salah satu nya adalah seperti gambar diatas mengelolah web web yang berbasis HTML dan CSS.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="kontak" class="py-5 bg-section-light fade-in-on-scroll">
+    <div class="container">
+        <h3 class="section-title">Kontak</h3>
+        <ul class="list-unstyled">
+            <li><i class="bi bi-phone me-2"></i> No HP/WA: <a href="tel:0895625503800">0895625503800</a></li>
+            <li><i class="bi bi-envelope me-2"></i> Email: <a href="mailto:rafaelarjuna87@gmail.com">rafaelarjuna87@gmail.com</a></li>
+            <li><i class="bi bi-instagram me-2"></i> Instagram: <a href="https://instagram.com/paell1__" target="_blank">@paell1__</a></li>
+            <li><i class="bi bi-tiktok me-2"></i> Tiktok: <a href="https://tiktok.com/@paell____" target="_blank">@paell____</a></li>
+        </ul>
+    </div>
+</section>
+
+<footer class="py-3 text-center shadow-sm">
+    <p class="text-muted mb-0">&copy; 2025 Portofolio Modern - Rafael</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// --- Animasi Typing Nama ---
+const text = "Rafael Putra Arjuna";
+let index = 0;
+function typeEffect() {
+    const target = document.getElementById('typing-name');
+    if (index < text.length) {
+        target.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100);
+    }
+}
+window.onload = typeEffect;
+
+// --- Dark Mode Switch Logika Baru ---
+const toggleBtn = document.getElementById("darkToggle");
+const DARK_MODE_CLASS = "dark-mode";
+const STORAGE_KEY = "mode";
+
+function applyMode(mode) {
+    if (mode === "dark") {
+        document.body.classList.add(DARK_MODE_CLASS);
+        toggleBtn.textContent = "☀️";
+    } else {
+        document.body.classList.remove(DARK_MODE_CLASS);
+        toggleBtn.textContent = "🌙";
+    }
+}
+
+let savedMode = localStorage.getItem(STORAGE_KEY) || "light";
+applyMode(savedMode);
+
+toggleBtn.addEventListener("click", () => {
+    savedMode = savedMode === "light" ? "dark" : "light";
+    localStorage.setItem(STORAGE_KEY, savedMode);
+    applyMode(savedMode);
+});
+
+
+// --- Animasi Scroll Reveal (Fade In On Scroll) ---
+const revealElements = document.querySelectorAll('.fade-in-on-scroll');
+
+if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+} else {
+    window.addEventListener('scroll', () => {
+        revealElements.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 150) {
+                el.style.animationPlayState = 'running';
+            }
+        });
+    });
+}
+</script>
+</body>
+</html>
